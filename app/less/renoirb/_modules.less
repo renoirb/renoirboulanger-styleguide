@@ -1,0 +1,544 @@
+// *
+// * Centered Floats (Wha?!)
+// *
+// * How to handle floating elements centered within a parent full
+// * block element
+// *
+// * thanks: http://pmob.co.uk/pob/centred-float.htm
+// *
+.centeredFloats {
+    margin: 0 auto;
+    /* This must exist... or be redefined */
+    display: table;
+    white-space: nowrap;
+  >* {
+      list-style: none;
+      display: table-row;
+      white-space: nowrap;
+    li {
+        display: table-cell; 
+    }
+  } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// * =Section: Module: .zone
+// * 
+// * pattern:  .zone { .zone-tools {}  .zone-top {}  .zone-bottom {}  }
+// * 
+.zone {
+  .zone-tools {
+      margin-top:5px;
+      margin-bottom:5px;
+    .nav {
+        margin:0;
+    }
+  }
+  .zone-top {
+      padding:40px 20px;
+  }
+  .zone-content {
+      padding:0 20px;
+    aside > div {
+        .mixin-box-border-bottom;
+    }
+    aside div:last-child {
+        border-bottom-color:white;
+    }
+  }
+  .zone-bottom {
+        padding:20px;
+    .zone-bottom-padding {
+        padding-top:20px;
+        margin-top:-20px;
+        margin-left:-20px;
+        margin-right:-20px;
+    }
+    .zone-bottom-content {
+        padding:0;
+        padding-top:20px;
+    }
+  }
+}
+header .zone-tools .row {
+    margin:0;
+}
+
+
+
+
+
+
+
+
+
+.copyrights {
+    padding:10px 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile {
+  .profile-unit {
+      margin-bottom:10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// *
+// * =Section: Module: .nav-horiz (module layer)
+// * 
+// * A different variant of .nav.nav-pills, but with a line underneath
+// *
+// * pattern:  .nav.nav-horiz { ul { li[.active] { a } } }
+// * 
+.nav.nav-horiz {
+  > li {
+    &.active,
+    &:hover {
+        border-bottom:@themeBoxBorderBottom;// 4px solid @themeVividColor;
+    }
+  }
+  li+li {
+      margin-left: 15px;
+  }
+  a {
+      padding:4px 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// * hentry
+// *
+// * pattern: .hentry { figure {}  .hentry-body { header {}   p {}   aside {} } }
+// *
+.hentry {
+  .hentry-body {
+      box-sizing: border-box;
+  }
+  header {
+      overflow:hidden;
+      margin-bottom:10px;
+  }
+  .more {
+      white-space:nowrap;
+    &:after {
+     content: "\00bb";
+     color: @themeVividColor;
+    }
+  }
+  aside {
+      margin-top:25px;
+    ul {
+        overflow:hidden;
+        list-style:none;
+        margin:0;
+      li {
+          float:left;
+          font-weight:bold;
+          margin-bottom:5px;
+      }
+      li+li {
+          margin-left:5px;
+      }
+      li:first-child {
+        margin-left:5px;
+      }
+      a {
+          background-color:darken(@themeDarkColor, 15%);
+          .mixin-rounded(4px);
+          display:block;
+          padding:0 5px;
+          text-transform:uppercase;
+          color:#FFF !important;
+          font-size:0.75em;
+          font-weight:normal;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.calendar {
+    .mixin-calendar;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.boxes {
+  .box+.box {
+    .mixin-box-between;
+  }
+  header {
+      margin-bottom: @gridGutterWidth;
+    h1 {
+        font-size:1.7em;
+        font-weight:normal;
+        font-color:@themeMediumColor;
+    }
+  }
+  article {
+      margin-bottom: @gridGutterWidth;
+  }
+  article+article {
+      padding-top: @gridGutterWidth;
+      border-top:3px solid @themeMediumColor;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// * Variant .articles-*
+// *
+// * http://css-tricks.com/snippets/html/html5-article-structure-with-hnews/
+// *
+.articles-hilighted {
+    overflow:hidden;
+  .hentry-body {
+      padding:25px;
+      min-height:280px;
+      background-color: lighten(@themeLightBaseColor, 2%);
+  }
+  .hentry {
+    .hilighted-figure {
+        margin:0;
+        height:280px;
+      b {
+          display:block;
+      }
+    }
+  }
+  .hilighted-figure {
+    display:none;
+  }
+  .hilighted-alfa {
+      margin-bottom:20px;
+      overflow:hidden;
+    .hilighted-figure {
+        display:block;
+        float:left;
+        width:50%;
+      img {
+          width:100%;
+      }
+    }
+    .hentry-body {
+        overflow:hidden;
+    }
+  }
+  .hilighted-bravo,
+  .hilighted-charlie {    
+      border-top:0;
+      float:left;
+      width:50%;
+  }
+  .hilighted-bravo .hentry-body {
+      margin-right:14px;
+  }
+  .hilighted-charlie .hentry-body {
+      margin-left:14px;    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// * Variant .articles-*
+// *
+// * http://css-tricks.com/snippets/html/html5-article-structure-with-hnews/
+// *
+.articles-full {
+  header {
+    time {
+      border-top:1px solid @themeDarkColor;
+      padding-top: @gridGutterWidth;
+      display:block;
+      font-size:1.1em;
+      font-style:italic;
+    }
+    p {
+      .lead;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// * Variant .articles-*
+// *
+// * http://css-tricks.com/snippets/html/html5-article-structure-with-hnews/
+// *
+.articles-secondary {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// * Articles Comments
+// *
+.articles-comments {
+    .comment {
+         margin-bottom:15px;
+         overflow:hidden;
+    }
+    .comment-author {
+         margin-bottom:5px;
+    }
+    .calendar {
+         font-size:.5em;
+         width:30px;
+      .calendar-day {
+          padding-top:3px;
+          padding-bottom:3px;
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.boxes {
+  header {
+      margin-bottom: @gridGutterWidth;
+    h1 {
+        font-size:1.7em;
+        font-weight:normal;
+        font-color:@themeMediumColor;
+    }
+  }
+  article {
+      margin-bottom: @gridGutterWidth;
+  }
+  article+article {
+      padding-top: @gridGutterWidth;
+      border-top:1px solid @themeMediumColor;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tag-cloud {
+  ul {
+      font-size:0.7em;
+      overflow:hidden;
+      list-style-type:none;
+      margin:0;
+  }
+  li {
+      float:left;
+      padding:2px;
+  }
+  a {
+  }
+  .size1 {
+      font-size:1.4em;
+  }
+  .size2 {
+      font-size:1.8em;
+  }
+  .size3 {
+      font-size:2.2em;
+  }
+  .size4 {
+      font-size:2.6em;
+  }
+  .size5 {
+      font-size:3em;
+  }
+  .size6 {
+      font-size:3.4em;
+  }
+  .size7 {
+      font-size:3.8em;
+  }
+  .size8 {
+      font-size:4em;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-light {
+  > li {
+      font-size:1.1em;
+  }
+  a {
+    border-left:5px solid white; 
+  }
+  .nav-light-alfa > a {
+    border-left-color: @themeAlphaColor;
+    color: @themeAlphaColor;
+  }
+  .nav-light-bravo > a {
+    border-left-color: @themeBravoColor;
+    color: @themeBravoColor;
+  }
+  .nav-light-charlie > a {
+    border-left-color: @themeCharlieColor;
+    color: @themeCharlieColor;
+  }
+  .nav-light-delta > a {
+    border-left-color: @themeDeltaColor;
+    color: @themeDeltaColor;
+  }
+  .nav-light-echo > a {
+    border-left-color:  @themeEchoColor;
+    color: @themeEchoColor;
+  }    
+  .nav-light-foxtrot > a {
+    border-left-color:  @themeFoxtrotColor;
+    color: @themeFoxtrotColor;
+  }
+  .nav-light-alfa.active > a {
+    background-color: lighten(@themeAlphaColor, 20%);
+  }
+  .nav-light-bravo.active > a  {
+    background-color: lighten(@themeBravoColor, 20%);
+  }
+  .nav-light-charlie.active > a  {
+    background-color: lighten(@themeCharlieColor, 20%);
+  }
+  .nav-light-delta.active > a  {
+    background-color: lighten(@themeDeltaColor, 20%);
+  }
+  .nav-light-echo.active > a  {
+    background-color: lighten(@themeEchoColor, 20%);
+  }    
+  .nav-light-foxtrot.active > a  {
+    background-color: lighten(@themeFoxtrotColor, 20%);
+  }
+  .active > a {
+    color: #FFF;
+  }
+}

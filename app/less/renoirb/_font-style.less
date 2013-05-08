@@ -1,0 +1,158 @@
+// 
+// =Section: Mixins
+// 
+.mixin-font-lead {
+    font-size:1.2em;
+    line-height:1.3em;
+}
+.mixin-feature-title {
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// =Section: Layout  (adaptation)
+// 
+.renoirboulanger {
+    font-weight:200;
+    line-height:1.3em;
+  .nav a {
+      .mixin-feature-title;
+  }
+  h2 {
+      color: @themeVividColor;
+      font-size: 1.8em;
+  }
+  header .zone-top {
+      .mixin-feature-title;
+    .nav-horiz {
+      a {
+          font-size: 1.3em;
+          display:block;
+          padding:9px 5px;
+      }
+    }
+    h1 {
+        white-space:nowrap;
+        line-height:0.8em; 
+        font-size:32px;
+      a {
+          font-weight:400;
+          color: #000;
+          text-decoration:none;
+      }
+
+      small {
+          font-size:0.49em;
+          color: @themeVividColor;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.box header,
+.hentry {
+  h2,h3,h4 {
+      .mixin-feature-title;
+      margin:0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+// *
+// *
+// *
+// *
+.articles-hilighted,
+.articles-secondary {
+  h2,h3,h4 {
+      .mixin-font-lead;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// *
+// *
+.about {
+    .mixin-font-lead;
+    color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// *
+// * #sidebar
+// *
+#sidebar {
+  h2,h3,h3 {
+      .mixin-feature-title;
+      font-size: 1.3em;
+      color:@themeDarkestColor;
+      margin-bottom: 15px;
+  }
+}

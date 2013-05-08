@@ -1,0 +1,88 @@
+// =Layer: Theme
+body.renoirboulanger {
+    background-color: @themeLightBaseColor;
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color:@themeDarkColor;
+}
+
+
+
+
+
+
+
+
+
+
+// *
+// * =Section: Module: .nav-horiz (theme layer)
+// * 
+// * A different variant of .nav.nav-pills, but with a line underneath
+// *
+// * pattern:  .nav.nav-horiz { ul { li[.active] { a } } }
+// * 
+.nav.nav-horiz {
+  li {
+  }
+  > li {
+    &.active,
+    &:hover {
+      a{
+          background-color:transparent;
+          color: @themeDarkestColor;
+      }
+    }
+  }
+  li+li {
+  }
+  a {
+      color: @themeDarkestColor;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.zone {
+  .zone-top,
+  .zone-content {
+      background-color:#FFF;
+  }
+  .zone-bottom {
+      color:#FFF;
+      background-color:@themeDarkestColor;
+    .zone-bottom-padding {
+      background-color:#FFF;
+    }
+  }
+  .zone-top {        // white background
+
+  }
+  .zone-content {   // white background
+  }
+  .zone-tools {     // gray background (on top of header)
+    .nav-pills li a {
+        color:#000 !important;
+    }
+  }
+  .zone-bottom {    // darkest background (footer)
+  }
+}

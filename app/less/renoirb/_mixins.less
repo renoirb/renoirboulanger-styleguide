@@ -1,0 +1,129 @@
+//
+// Tout mixin utilisant CSS3 devrait etre overridé ici
+// Pour pouvoir ajouter les HOOKS de progressive enhancements
+// ici.
+//
+// Naming convention:
+// .mixin-{fonction}( /* memes variables et valeurs */ )
+
+.mixin-rounded(@radius: 15px){
+    .rounded(@radius);  // voir mixins/namespace-e.less la fonction .rounded();
+    // Ajouter le .htc de PIE3 ici :)
+}
+
+.mixin-drop-shadow(@x-axis: 0, @y-axis: 0px, @blur: 4px, @alpha: 0.1){
+    .drop-shadow(@x-axis, @y-axis, @blur, @alpha);
+}
+
+.mixin-border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0){
+    .border-radius(@topright, @bottomright, @bottomleft, @topleft);
+}
+
+
+// *
+// * =Section: Mixin: .mixin-page-header
+// * 
+// * Extension du code specifique bootstrap
+// * 
+.mixin-page-header { // coming from bootstrap/less/type.less
+    .page-header;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+// Flexbox 
+// ... and it's *REPLACEMENT
+// 
+.flexbox(@orient: horizontal, @pack: center) {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-direction: normal;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    -ms-box-align: stretch;
+    box-align: stretch;
+    -webkit-box-orient: @orient;
+    -moz-box-orient: @orient;
+    -ms-box-orient: @orient;
+    box-orient: @orient;   
+    -webkit-box-pack: @pack;
+    -moz-box-pack: @pack;
+    box-pack: @pack;
+}
+.flexbox-children(@ordinal: 1, @flex: 1){
+    -webkit-box-ordinal-group: @ordinal;
+    -webkit-box-flex: @flex;
+    -moz-box-flex: @flex;
+    -ms-box-flex: @flex;
+    box-flex: @flex;
+    width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+// CALENDAR-BOX
+//
+.mixin-calendar {
+      width:50px;
+      float:left;
+      margin:0;
+      margin-top:5px;
+      margin-right:15px;
+      background-color: darken(@themeDarkColor, 30%);
+      color: #FFF;
+      text-align:center;
+      font-size:0.75em;
+      line-height:2em;
+      .border-radius(0, 5px, 5px, 0);
+    .calendar-day {
+        background-color:darken(@themeDarkColor, 10%);
+        display:block;
+        padding:10px 3%;
+        font-size:2.5em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.mixin-box-border-bottom {
+    margin-bottom:20px;
+    padding-bottom:20px;  
+    border-bottom:@themeBoxBorderBottom;// 4px solid @themeVividColor;
+}
+.mixin-box-between {
+    margin-top:20px;
+    padding-top:20px;  
+    border-top:@themeBoxBorderBottom;// 4px solid @themeVividColor;
+}

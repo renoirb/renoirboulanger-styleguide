@@ -1,0 +1,7 @@
+node_modules
+dist
+.tmp
+.sass-cache
+components
+.DS_Store
+*.sublime-workspace

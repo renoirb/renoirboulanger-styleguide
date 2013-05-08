@@ -1,0 +1,48 @@
+// Importing original
+@import "../bootstrap/less/responsive-767px-max.less";
+
+
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+    #media-query-variant:after {
+        content: "max-width 480px (bravo)";
+    }
+}
+
+
+
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+    #media-query-variant:after {
+        content: "max-width 767px (delta)";
+    }
+
+
+
+
+
+    .zone-top nav,
+    .nav.nav-horiz li ,
+    header .behavior-fade {
+        width:100%;
+        clear:both;
+      .pull-right {
+          float:none !important;
+      }
+    }
+    header .zone-top {
+        .nav.nav-horiz {
+            margin-right:20px;
+        }
+        .nav.nav-horiz li {
+            border-bottom-color:white;// 4px solid @themeVividColor;
+        }
+        .nav.nav-horiz li + li {
+            margin-left:0;
+        }
+    }
+}

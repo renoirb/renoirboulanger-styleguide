@@ -1,6 +1,8 @@
 {
   "name": "test",
+  "description": "Javascript dependencies package definition for RenoirBoulanger.com deployment. For project details, see README.md",
   "version": "0.0.0",
+  "author": "Renoir Boulanger <hello@renoirboulanger.com> (http://renoirboulanger.com/)",
   "dependencies": {
   },
   "devDependencies": {

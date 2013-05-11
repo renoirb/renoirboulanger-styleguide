@@ -2,7 +2,10 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": "/Users/renoirb/workspaces/personnel/site-static"
+		},
+		{
+			"path": "/Users/renoirb/workspaces/contribution/roughdraft.js"
 		}
 	]
 }

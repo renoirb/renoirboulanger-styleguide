@@ -4,7 +4,6 @@ var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
-var modulesDefinitions = require('./modules');
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -133,9 +132,18 @@ module.exports = function (grunt) {
             dist: {}
         },*/
         requirejs: {
+            server: {
+                baseDir: './'
+            },
             dist: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
-                options: modulesDefinitions
+                options: {
+                    optimize: 'none',
+                    name: 'main',
+                    mainConfigFile: 'scripts/main.js',
+                    preserveLicenseComments: true,
+                    wrap: true
+                }
             }
         },
         rev: {

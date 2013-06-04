@@ -1,9 +1,7 @@
 define(function(require){
     'use strict';
 
-    require(['jquery','libs/domReady'], function($,domReady){
-        $('<script src="components/roughdraft.js/jquery.roughdraft.0.1.3.js"></script>').appendTo('head');
-
+    require(['jquery','domReady','roughDraft'], function($,domReady,roughDraft){
         $('.nav-light li').eq(3).addClass('active');
 
         $('<div style="padding:5px 10px;background:#cc5200;color:#FFF;">Ceci est une  version statique de mon espace de travail utilisant <strong>Yeoman</strong>  pour illustrer le résultat du "styleguide" qui en découle. Pour voir la version mise en ligne de <a class="allow-link label label-info" title="Ce lien est activé, vous pouvez y visiter mon site web" href="https://renoirboulanger.com/">mon site web</a>.</div>').prependTo('body');
@@ -13,13 +11,15 @@ define(function(require){
             alert("Vue statique, lien désactivé.");
         });
 
-        setTimeout(function(){
-            $(window).roughDraft({
-                author:"baconipsum",
-                illustrator:"plachold",
-                classNameSequencer:!0
+        domReady(function(){
+            window.jQuery(window).roughDraft({
+                author: "baconipsum",
+                illustrator: "plachold",
+                classNameSequencer: true
             });
-        }, 20);
+        });
+
+
     });
 
     console.log('Demo time!');

@@ -1,12 +1,13 @@
 require.config({
     "paths": {
         "jquery": "../components/jquery/jquery",
-        "roughdraft.js": "../components/roughdraft.js/jquery.roughdraft.0.1.3.min"
+        "roughDraft": "libs/roughdraft.min",
+        "domReady": "libs/domReady"
     }
 });
 
 define(function(require){
-    var domReady = require('libs/domReady');
+    var domReady = require('domReady');
     var $ = require('jquery');
 
     domReady(function(){

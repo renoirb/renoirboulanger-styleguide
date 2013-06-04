@@ -128,21 +128,30 @@ module.exports = function (grunt) {
         },
         // not used since Uglify task does concat,
         // but still available if needed
-        /*concat: {
+        concat: {
             dist: {}
-        },*/
+        },
+        uglify: {
+            dist: {}
+        },
         requirejs: {
             server: {
                 baseDir: './'
             },
             dist: {
+                baseDir: 'app/',
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
+                    baseUrl: 'app/scripts',
                     optimize: 'none',
                     name: 'main',
-                    mainConfigFile: 'scripts/main.js',
+                    mainConfigFile: 'app/scripts/main.js',
                     preserveLicenseComments: true,
-                    wrap: true
+                    wrap: true,
+                    useStrict: true,
+                    // This is where it will dump things that the
+                    // usemin 'build:dist scripts/main.js', will expect!
+                    out: 'dist/scripts/main.js'
                 }
             }
         },
@@ -214,7 +223,10 @@ module.exports = function (grunt) {
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/*'
+                        'styles/fonts/*',
+                        'fonts/*',
+                        'components/modernizr/*',
+                        'scripts/libs/*'
                     ]
                 }]
             }
@@ -269,12 +281,11 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
-        'requirejs',
+        'requirejs:dist',
         'cssmin',
         'concat',
         'uglify',
         'copy',
-        'rev',
         'usemin'
     ]);
 

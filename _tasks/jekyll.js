@@ -1,3 +1,6 @@
+//
+// Not used, but a good example of a shell script
+//
 var child = require('child_process');
 module.exports = function(grunt) {
 
